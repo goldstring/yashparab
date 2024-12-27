@@ -1,0 +1,485 @@
+.btn .bx {
+  vertical-align: inherit;
+  margin-top: -3px;
+  font-size: 1.15rem;
+}
+
+.form-control {
+  height: calc(2.5rem + 2px);
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.3rem;
+}
+
+.btn {
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+}
+
+.bx.icon-single {
+  font-size: 1.5rem;
+}
+
+.form-inline .form-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.form-inline .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.cartNum
+{
+
+    top: -10px!important;
+    left: -13px!important;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .form-inline .form-control {
+    width: 300px;
+  }
+ 
+  
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .form-inline .form-control {
+    width: 440px;
+  }
+ 
+ 
+ 
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .form-inline .form-control {
+    width: 600px;
+  }
+
+
+
+  
+}
+
+.sub-menu.navbar-light .navbar-nav .active > .nav-link,
+.sub-menu.navbar-light .navbar-nav .nav-link.active,
+.sub-menu.navbar-light .navbar-nav .nav-link.show,
+.sub-menu.navbar-light .navbar-nav .show > .nav-link {
+  border-bottom: 3px solid #007bff;
+  color: #007bff;
+}
+
+.navbar .navbar-toggler {
+  border: none;
+}
+
+.navbar-light .navbar-toggler:focus {
+  outline: none;
+}
+
+.navbar {
+  padding: 1rem;
+}
+
+.main-menu {
+  position: relative;
+  z-index: 3;
+}
+
+.sub-menu {
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .sub-menu {
+    padding: 0 1rem;
+  }
+
+  .sub-menu.navbar-expand-md .navbar-nav .nav-link {
+    padding: 1rem 1.5rem;
+  }
+}
+
+.navbar.bg-light {
+  background: #fff !important;
+  box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.user-dropdown .nav-link {
+  padding: 0.15rem 0;
+}
+
+#sidebar {
+  background: #fff;
+  height: 100%;
+  left: -100%;
+  top: 0;
+  bottom: 0;
+  overflow-x:unset!important;
+  overflow-y: scroll;
+  position: fixed;
+  transition: 0.4s ease-in-out;
+  width: calc(100%- 70%);
+  z-index: 5001;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  padding: 1.25rem 1rem 1rem;
+
+}
+
+#sidebar.active {
+  left: 0;
+}
+
+#sidebar .sidebar-header {
+  background: #fff;
+  border-bottom: 1px solid #e4e4e4;
+  padding-bottom: 1.5rem;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid #e4e4e4;
+  margin-bottom: 40px;
+}
+
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+#sidebar ul li
+{
+    margin-bottom: 6px;
+}
+
+#sidebar ul li a {
+  padding: 10px 16px;
+  font-size: 1.1em;
+  display: block;
+  color: #000;
+  font-weight: 600;
+  text-decoration: unset;
+}
+
+#sidebar ul li a:hover {
+  color: #333;
+  background: #ffe900;
+}
+.shopByCategory  a:hover
+{
+    color: #fff!important;
+    background: #007bff!important;
+    border-radius: 21px;
+}
+
+#sidebar ul li.active > a,
+#sidebar a[aria-expanded="true"] {
+  color: #007bff;
+  background: #e6f2ff;
+
+  border-radius: 6px;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+#sidebar .links .dropdown-toggle::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+
+
+.overlay {
+  background: rgba(0, 0, 0, 0.7);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  z-index: -1;
+  width: 100%;
+  opacity: 0;
+}
+
+.overlay.visible {
+  opacity: 1;
+  z-index: 5000;
+}
+
+/* .mobiHeader .menuActive~.overlay {
+    opacity: 1;
+    width: 100%;
+} */
+
+ul.social-icons {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+ul.social-icons li {
+  display: inline-block;
+  margin-right: 0px;
+  margin-bottom: 0;
+}
+
+#sidebar ul.social-icons li a {
+  font-size: 24px;
+}
+
+.utility-nav {
+  background: #e4e4e4;
+  padding: 0.5rem 1rem;
+}
+
+.utility-nav p {
+  margin-bottom: 0;
+}
+
+.search-bar {
+  position: relative;
+  z-index: 2;
+  box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar .form-control {
+  width: calc(100% - 45px);
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-right: 8px;
+}
+
+.avatar.avatar-xs {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.user-dropdown .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+.dropdown-toggle:after { content: none }
+.navbar
+{
+    padding: 6px;
+}
+.btn-yellow
+{
+    color: #000;
+    background-color: #ffe900;
+    border-color: #ffe900;
+        font-weight: bold;
+}
+.logoImg
+{
+    background: url(https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fk-plus_3b0baa.png) no-repeat;
+    height: 36px;
+    width: 122px;
+    background-size: 100%;
+    text-indent: -9999px;
+    overflow: hidden;
+    display: inline-block;
+    z-index: 2;
+}
+.font_18{
+        font-size: 18px;
+}
+.font_15{
+        font-size: 15px;
+}
+.col-gap {
+  column-gap: 2rem;
+}
+.carousel .carousel-item {
+  height: 200px;
+}
+
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 200px;
+}
+.items{
+  width:90%;
+  margin:0px auto;
+}
+.slick-slide{
+  margin:10px;
+      width: 170px!important;
+}
+.slick-slide img{
+  width:100%;
+  border: 0px solid #fff;
+}
+
+body::-webkit-scrollbar-track,#sidebar::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: rgb(25 118 208 / 0%);
+}
+
+body::-webkit-scrollbar,#sidebar::-webkit-scrollbar
+{
+    width: 3px;
+    background-color: rgb(25 118 208 / 0%);
+}
+
+body::-webkit-scrollbar-thumb,#sidebar::-webkit-scrollbar-thumb
+{
+    background-color: #1c6eaf;
+    border: 2px solid #1c6eaf;
+}
+
+.QtyselectBox{
+    width:50%;margin: 0px 9px!important;
+  }
+  .addToCart{
+    width:50%;margin: 0px 9px!important;
+  }
+/*.product_title
+  {
+    font-size: 30px;
+   
+  }*/
+/* Large Desktop Device :1501px*/
+@media (min-width: 1501px) {
+   .product_title
+  {
+    font-size: 18px;
+    font-weight: 600;
+    color: #4e5155;
+  }
+}
+
+/*Desktop Device : 1200px*/
+@media (min-width: 1200px) and (max-width: 1500px) {
+
+   .product_title
+  {
+    font-size: 16px;
+     font-weight: 600;
+    color: #4e5155;
+   
+  }
+}
+
+/* Normal Device :992px. */
+@media (min-width: 992px) and (max-width: 1199px) {
+   .product_title
+  {
+    font-size: 16px;
+     font-weight: 600;
+    color: #4e5155;
+   
+  }
+}
+
+/* Tablet Desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .product_title
+  {
+    font-size: 16px;
+     font-weight: 600;
+    color: #4e5155;
+   
+  }
+}
+
+
+/*Large Mobile Device :576px */
+@media (min-width: 576px) and (max-width: 767px) {
+  .product_title
+  {
+    font-size: 16px;
+     font-weight: 600;
+    color: #4e5155;
+   
+  }
+}
+
+
+/* Small Mobile Device :480px. */
+@media (min-width: 480px) and (max-width: 575px) {
+}
+
+
+@media ((min-width: 480px) and (max-width: 575px)) {
+  .product_title
+  {
+    font-size: 16px;
+     font-weight: 600;
+    color: #4e5155;
+    
+  }
+ 
+
+}
+
+@media ((min-width:0px) and (max-width: 480px)) {
+   .product_title
+  {
+    font-size: 15px;
+     font-weight: 600;
+    color: #4e5155;
+  }
+}
+
+
+.dropdown1 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content1 {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 300;
+  min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 0.25rem;
+}
+
+.dropdown1:hover .dropdown-content1 {
+  display: block;
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yash Parab Portfolio</title>
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
+    <link href="plugins/material/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="plugins/simplebar/simplebar.css" rel="stylesheet" />
+    <!-- PLUGINS CSS STYLE -->
+    <link href="plugins/nprogress/nprogress.css" rel="stylesheet" />
+    
+    
+    <link href="plugins/DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css" rel="stylesheet" />
+    
+    
+    
+    
+    <!-- Yash CSS -->
+    <link id="main-css-href" rel="stylesheet" href="css/style.css" />
+    
+    <!-- FAVICON -->
+    <link href="images/favicon.png" rel="shortcut icon" />
+    <script src="plugins/nprogress/nprogress.js"></script>
+
+    <style>
+      .list-group-item span:first-child {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.list-group-item
+{
+    border: none;
+}
+.card-body
+{
+    font-weight: 400;
+    color: #333;
+    text-transform: capitalize;
+}
+    </style>
+
+  </head>
+  <body class="navbar-fixed sidebar-fixed" id="body">
+    <script>
+    NProgress.configure({ showSpinner: false });
+    NProgress.start();
+    </script>
+    
+    <!-- ====================================
+    ——— WRAPPER
+    ===================================== -->
+    <div class="wrapper">
+      
+      
+      <!-- ====================================
+      ——— LEFT SIDEBAR WITH OUT FOOTER
+      ===================================== -->
+      <aside class="left-sidebar sidebar-dark" id="left-sidebar">
+        <div id="sidebar" class="sidebar sidebar-with-footer">
+          <!-- Aplication Brand -->
+          <div class="app-brand">
+            <a href="/index.html">
+              <img src="images/logo.png" width="41" alt="Yash">
+              <span class="brand-name">Yash Parab</span>
+            </a>
+          </div>
+          <!-- begin sidebar scrollbar -->
+          <div class="sidebar-left" id="menubar" data-simplebar style="height: 100%;">
+            <!-- sidebar menu -->
+          
+          </div>
+          <div class="sidebar-footer">
+            <div class="sidebar-footer-content">
+              <a href="resume/resume.pdf" style="white-space: nowrap;font-weight: 600;" class="btn btn-primary" download="resume/resume.pdf">
+                Click To Download Resume
+               </a>
+              </div>
+            </div>
+          </div>
+        </aside>
+        
+        <!-- ====================================
+        ——— PAGE WRAPPER
+        ===================================== -->
+        <div class="page-wrapper">
+          
+          <!-- Header -->
+          <header class="main-header" id="header">
+            <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+              <!-- Sidebar toggle button -->
+              <button id="sidebar-toggler" class="sidebar-toggle">
+              <span class="sr-only">Toggle navigation</span>
+              </button>
+              <span class="page-title">Portfolio</span>
+              <div class="navbar-right ">
+                
+                <ul class="nav navbar-nav">
+                  
+                  <!-- User Account -->
+                  <li class="dropdown user-menu">
+                    <button class="dropdown-toggle nav-link" data-toggle="dropdown">
+                    <img src="images/profile_image.jpg" class="user-image rounded-circle" alt="User Image" />
+                    <span class="d-none d-lg-inline-block" style="content: none;">Yash Parab</span>
+                    </button>
+                  
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+          </header>
+            <!-- ====================================
+            ——— CONTENT WRAPPER
+            ===================================== -->
+            <div class="content-wrapper">
+              <div class="content">
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-primary">
+                      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                      <li class="breadcrumb-item"><a href="machine_learning.html">Machine Learning</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Medical Insurance Cost Prediction
+                      </li>
+                    </ol>
+                </nav>
+
+                <div class="card w-100 mb-5 shadow">
+                  <div class="card-header bg-white">
+                    <h3 class="text-center text-uppercase">Medical Insurance Cost Prediction
+                    </h3>
+                  </div>
+                  <div class="card-body">
+
+                    <div class="mb-3">
+                        <iframe src="https://www.kaggle.com/embed/yashparab/medical-insurance-prediction?kernelSessionId=212807445" height="500" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="Medical Insurance Prediction"></iframe>                    </div>
+
+                    <h3 class="mb-2">Project Resources</h3>
+                    <div class="row">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span>Kaggle Notebook : </span>
+                                <span><a href="https://www.kaggle.com/code/yashparab/medical-insurance-prediction" class="text-info" style="font-size: large;">Click Here</a></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    
+                    <div class="container">
+                      <h3 class="mb-2">Problem Statement</h3>
+                      <p class="mb-2">
+                          Accurately predicting medical insurance costs is crucial for insurance companies to set fair pricing and manage risks effectively. Various factors such as age, sex, BMI, smoking status, number of children, and region significantly influence insurance expenses. Identifying these factors and understanding their impact on costs helps companies enhance pricing strategies and improve profitability. The challenge lies in developing machine learning models that can precisely forecast medical expenses for new policyholders.
+                      </p>
+              
+                      <h3 class="mb-2">Project Description</h3>
+                      <p class="mb-2">
+                          This project aims to build a machine learning model to predict medical insurance costs based on user-specific features like age, sex, BMI, smoking status, number of children, and region. The dataset used contains 2.7K records and 7 key features. The project explores the following:
+                      </p>
+              
+                      <h3 class="mb-2">Data Analysis</h3>
+                      <p class="mb-2">Analyzing the correlation between features and medical charges to identify primary cost-driving factors.</p>
+              
+                      <h3 class="mb-2">Data Preprocessing</h3>
+                      <p class="mb-2">Cleaning and preparing the dataset, including handling missing values, encoding categorical variables, and scaling numerical features.</p>
+              
+                      <h3 class="mb-2">Feature Engineering</h3>
+                      <p class="mb-2">Enhancing predictive power by selecting or creating relevant features.</p>
+              
+                      <h3 class="mb-2">Model Development</h3>
+                      <p class="mb-2">Training and testing various machine learning models (e.g., Linear Regression, Random Forest, Gradient Boosting) to forecast medical expenses.</p>
+              
+                      <h3 class="mb-2">Evaluation</h3>
+                      <p class="mb-2">Assessing model performance using metrics like Mean Absolute Error (MAE) and R² Score.</p>
+              
+                      <h3 class="mb-2">Insights</h3>
+                      <p class="mb-2">Providing insights into the factors contributing to high medical insurance costs, helping insurance companies optimize pricing and risk assessment.</p>
+              
+                      <p class="mb-2">
+                          This project showcases how machine learning can enhance efficiency and profitability in the health insurance industry by delivering accurate expense predictions.
+                      </p>
+                    </div>
+                    
+
+                    
+                      
+
+
+
+                  </div>
+                </div>
+
+
+                
+              
+              </div>
+            
+            </div>
+          
+        
+        </div>
+      </div>
+      
+      
+      
+      <script src="plugins/jquery/jquery.min.js"></script>
+      <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="plugins/simplebar/simplebar.min.js"></script>
+      <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
+      
+      
+      <script src="plugins/DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
+      
+      
+      <script src="plugins/apexcharts/apexcharts.js"></script>
+      
+      
+      <script src="js/mono.js"></script>
+      <script src="js/chart.js"></script>
+      <script src="js/map.js"></script>
+      <script src="js/custom.js"></script>
+      <script src="js/sidebar_menu.js"></script>
+
+
+      
+    </body>
+  </html>

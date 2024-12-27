@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yash Parab Portfolio</title>
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
+    <link href="plugins/material/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="plugins/simplebar/simplebar.css" rel="stylesheet" />
+    <!-- PLUGINS CSS STYLE -->
+    <link href="plugins/nprogress/nprogress.css" rel="stylesheet" />
+    
+    
+    <link href="plugins/DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css" rel="stylesheet" />
+    
+    
+    
+    
+    <!-- Yash CSS -->
+    <link id="main-css-href" rel="stylesheet" href="css/style.css" />
+    
+    <!-- FAVICON -->
+    <link href="images/favicon.png" rel="shortcut icon" />
+    <script src="plugins/nprogress/nprogress.js"></script>
+
+    <style>
+      
+
+.order-track {
+  margin-top: 2rem;
+  padding: 0 1rem;
+  padding-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s height 0.3s;
+  transform-origin: top center;
+}
+
+.order-track-step {
+  display: flex;
+  height: 7rem;
+}
+
+.order-track-step:last-child {
+  overflow: hidden;
+}
+
+.order-track-step:last-child .order-track-status span:last-of-type {
+  display: none;
+}
+
+.order-track-status {
+  margin-right: 1.5rem;
+  position: relative;
+}
+
+.order-track-status-dot {
+  display: block;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: #9e6de0;
+}
+
+.order-track-status-line {
+  display: block;
+  margin: 0 auto;
+  width: 2px;
+  height: 7rem;
+  background: #9e6de0;
+}
+
+.order-track-text-stat {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.order-track-text-sub {
+  font-size: 1rem;
+  font-weight: 300;
+}
+    </style>
+
+  </head>
+  <body class="navbar-fixed sidebar-fixed" id="body">
+    <script>
+    NProgress.configure({ showSpinner: false });
+    NProgress.start();
+    </script>
+    
+    <!-- ====================================
+    ——— WRAPPER
+    ===================================== -->
+    <div class="wrapper">
+      
+      
+      <!-- ====================================
+      ——— LEFT SIDEBAR WITH OUT FOOTER
+      ===================================== -->
+      <aside class="left-sidebar sidebar-dark" id="left-sidebar">
+        <div id="sidebar" class="sidebar sidebar-with-footer">
+          <!-- Aplication Brand -->
+          <div class="app-brand">
+            <a href="/index.html">
+              <img src="images/logo.png" width="41" alt="Yash">
+              <span class="brand-name">Yash Parab</span>
+            </a>
+          </div>
+          <!-- begin sidebar scrollbar -->
+          <div class="sidebar-left" id="menubar" data-simplebar style="height: 100%;">
+            <!-- sidebar menu -->
+          
+          </div>
+          <div class="sidebar-footer">
+            <div class="sidebar-footer-content">
+              <a href="resume/resume.pdf" style="white-space: nowrap;font-weight: 600;" class="btn btn-primary" download="resume/resume.pdf">
+                Click To Download Resume
+               </a>
+              </div>
+            </div>
+          </div>
+        </aside>
+        
+        <!-- ====================================
+        ——— PAGE WRAPPER
+        ===================================== -->
+        <div class="page-wrapper">
+          
+          <!-- Header -->
+          <header class="main-header" id="header">
+            <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+              <!-- Sidebar toggle button -->
+              <button id="sidebar-toggler" class="sidebar-toggle">
+              <span class="sr-only">Toggle navigation</span>
+              </button>
+              <span class="page-title">Portfolio</span>
+              <div class="navbar-right ">
+                
+                <ul class="nav navbar-nav">
+                  
+                  <!-- User Account -->
+                  <li class="dropdown user-menu">
+                    <button class="dropdown-toggle nav-link" data-toggle="dropdown">
+                    <img src="images/profile_image.jpg" class="user-image rounded-circle" alt="User Image" />
+                    <span class="d-none d-lg-inline-block" style="content: none;">Yash Parab</span>
+                    </button>
+                  
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+          </header>
+            <!-- ====================================
+            ——— CONTENT WRAPPER
+            ===================================== -->
+            <div class="content-wrapper">
+              <div class="content">
+                <div class="row">
+                  <div class="card card-default card-profile d-flex justify-content-center w-100">
+                    <div class="card-header-bg" style="background-image:url(assets/img/user/user-bg-01.jpg)"></div>
+                    <div class="card-body card-profile-body">
+                      <div class="profile-avata">
+                        <img class="rounded-circle" width="100%" src="images/profile_image.jpg" alt="Avata Image">
+                        <span class="h3 d-block mt-3 mb-2">Yash Parab</span>
+                        <span class="d-block">yashp7962@gmail.com</span>
+                      </div>
+                     
+                    </div>
+                    <div class="card-footer card-profile-footer">
+                      <ul class="nav nav-pills justify-content-center">
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-home-tab"  href="index.html" role="tab" aria-controls="nav-tabs" aria-selected="false">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" id="pills-home-tab"  href="education.html" role="tab" aria-controls="nav-tabs" aria-selected="false">Educations</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-home-tab"  href="skills.html" role="tab" aria-controls="nav-tabs" aria-selected="false">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-home-tab"  href="experience.html" role="tab" aria-controls="nav-tabs" aria-selected="false">Experience</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-home-tab"  href="certificates.html" role="tab" aria-controls="nav-tabs" aria-selected="false">Certificates</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-home-tab"  href="service.html" role="tab" aria-controls="nav-tabs" aria-selected="false">Services</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                </div>
+
+             
+                <div class="row">
+
+                  <div class="card card-default card-profile d-flex justify-content-center w-100">
+                    <div class="row card-body card-profile-body justify-content-center p-4">
+
+                      
+                        <section class="root">
+                           
+                            <div class="order-track">
+                              <div class="order-track-step">
+                                <div class="order-track-status">
+                                  <span class="order-track-status-dot"></span>
+                                  <span class="order-track-status-line"></span>
+                                </div>
+                                <div class="order-track-text">
+                                  <p class="order-track-text-stat">Master of Computer Applications - MCA, Information Technology</p>
+                                  <span class="order-track-text-sub">2022 - 2024, CGPI 8.01 </span>
+                                  <p class="order-track-text-sub">University of Mumbai,India</p>
+                                </div>
+                              </div>
+                              <div class="order-track-step">
+                                <div class="order-track-status">
+                                  <span class="order-track-status-dot"></span>
+                                  <span class="order-track-status-line"></span>
+                                </div>
+                                <div class="order-track-text">
+                                  <p class="order-track-text-stat">Bachelor of Science In Information Technology BscIT</p>
+                                  <span class="order-track-text-sub">2016 - 2019, CGPI 7.12 </span>
+                                  <p>Shankar Narayan College of Arts & Commerce, Mumbai University, India</p>
+                                </div>
+                              </div>
+                              <div class="order-track-step">
+                                <div class="order-track-status">
+                                  <span class="order-track-status-dot"></span>
+                                  <span class="order-track-status-line"></span>
+                                </div>
+                                <div class="order-track-text">
+                                  <p class="order-track-text-stat">Higher Secondary Certificate In Science</p>
+                                  <span class="order-track-text-sub">2014 - 2016, Percentage 62.59% </span>
+                                  <p>Abhinav Vidya Mandir College, Mumbai University, India</p>
+                                </div>
+                              </div>
+                              <div class="order-track-step">
+                                <div class="order-track-status">
+                                  <span class="order-track-status-dot"></span>
+                                  <span class="order-track-status-line"></span>
+                                </div>
+                                <div class="order-track-text">
+                                  <p class="order-track-text-stat">Secondary School Certificate In Science</p>
+                                  <span class="order-track-text-sub">2014, Percentage 79% </span>
+                                  <p>Abhinav Vidya Mandir School, Mumbai University, India</p>
+                                </div>
+                              </div>
+                             
+                            </div>
+                          </section>
+
+
+                       
+                      
+                     
+                    
+                    </div>
+                    
+                  </div>
+
+
+                  
+
+
+
+                </div>
+              
+              </div>
+            
+            </div>
+          
+        
+        </div>
+      </div>
+      
+      
+      
+      <script src="plugins/jquery/jquery.min.js"></script>
+      <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="plugins/simplebar/simplebar.min.js"></script>
+      <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
+      
+      
+      <script src="plugins/DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
+      
+      
+      <script src="plugins/apexcharts/apexcharts.js"></script>
+      
+      
+      <script src="js/mono.js"></script>
+      <script src="js/chart.js"></script>
+      <script src="js/map.js"></script>
+      <script src="js/custom.js"></script>
+      <script src="js/sidebar_menu.js"></script>
+    </body>
+  </html>

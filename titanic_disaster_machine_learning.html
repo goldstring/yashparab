@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yash Parab Portfolio</title>
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
+    <link href="plugins/material/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="plugins/simplebar/simplebar.css" rel="stylesheet" />
+    <!-- PLUGINS CSS STYLE -->
+    <link href="plugins/nprogress/nprogress.css" rel="stylesheet" />
+    
+    
+    <link href="plugins/DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css" rel="stylesheet" />
+    
+    
+    
+    
+    <!-- Yash CSS -->
+    <link id="main-css-href" rel="stylesheet" href="css/style.css" />
+    
+    <!-- FAVICON -->
+    <link href="images/favicon.png" rel="shortcut icon" />
+    <script src="plugins/nprogress/nprogress.js"></script>
+
+    <style>
+      .list-group-item span:first-child {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.list-group-item
+{
+    border: none;
+}
+.card-body
+{
+    font-weight: 400;
+    color: #333;
+    text-transform: capitalize;
+}
+    </style>
+
+  </head>
+  <body class="navbar-fixed sidebar-fixed" id="body">
+    <script>
+    NProgress.configure({ showSpinner: false });
+    NProgress.start();
+    </script>
+    
+    <!-- ====================================
+    ——— WRAPPER
+    ===================================== -->
+    <div class="wrapper">
+      
+      
+      <!-- ====================================
+      ——— LEFT SIDEBAR WITH OUT FOOTER
+      ===================================== -->
+      <aside class="left-sidebar sidebar-dark" id="left-sidebar">
+        <div id="sidebar" class="sidebar sidebar-with-footer">
+          <!-- Aplication Brand -->
+          <div class="app-brand">
+            <a href="/index.html">
+              <img src="images/logo.png" width="41" alt="Yash">
+              <span class="brand-name">Yash Parab</span>
+            </a>
+          </div>
+          <!-- begin sidebar scrollbar -->
+          <div class="sidebar-left" id="menubar" data-simplebar style="height: 100%;">
+            <!-- sidebar menu -->
+          
+          </div>
+          <div class="sidebar-footer">
+            <div class="sidebar-footer-content">
+              <a href="resume/resume.pdf" style="white-space: nowrap;font-weight: 600;" class="btn btn-primary" download="resume/resume.pdf">
+                Click To Download Resume
+               </a>
+              </div>
+            </div>
+          </div>
+        </aside>
+        
+        <!-- ====================================
+        ——— PAGE WRAPPER
+        ===================================== -->
+        <div class="page-wrapper">
+          
+          <!-- Header -->
+          <header class="main-header" id="header">
+            <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+              <!-- Sidebar toggle button -->
+              <button id="sidebar-toggler" class="sidebar-toggle">
+              <span class="sr-only">Toggle navigation</span>
+              </button>
+              <span class="page-title">Portfolio</span>
+              <div class="navbar-right ">
+                
+                <ul class="nav navbar-nav">
+                  
+                  <!-- User Account -->
+                  <li class="dropdown user-menu">
+                    <button class="dropdown-toggle nav-link" data-toggle="dropdown">
+                    <img src="images/profile_image.jpg" class="user-image rounded-circle" alt="User Image" />
+                    <span class="d-none d-lg-inline-block" style="content: none;">Yash Parab</span>
+                    </button>
+                    
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+          </header>
+            <!-- ====================================
+            ——— CONTENT WRAPPER
+            ===================================== -->
+            <div class="content-wrapper">
+              <div class="content">
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-primary">
+                      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                      <li class="breadcrumb-item"><a href="kaggle_competition.html">Kaggle Competition</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Titanic - Machine Learning from Disaster
+
+                      </li>
+                    </ol>
+                </nav>
+
+                <div class="card w-100 mb-5 shadow">
+                  <div class="card-header bg-white">
+                    <h3 class="text-center text-uppercase">Titanic - Machine Learning from Disaster
+                    </h3>
+                  </div>
+                  <div class="card-body">
+
+                    <div class="mb-3">
+                        <iframe src="https://www.kaggle.com/embed/yashparab/titanic-machine-learning-from-disaster?kernelSessionId=201492243" height="800" style="margin: 0 auto; width: 100%; max-width: 100%;max-height:30rem;" frameborder="0" scrolling="auto" title="Titanic - Machine Learning from Disaster"></iframe>
+
+                    </div>
+
+                    <h3 class="mb-2">Project Resources</h3>
+                    <div class="row">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span>Kaggle Notebook : </span>
+                                <span><a href="https://www.kaggle.com/code/yashparab/titanic-machine-learning-from-disaster" class="text-info" style="font-size: large;">Click Here</a></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h3 class="mb-3">Project Description</h3>
+
+                    
+
+                    <div class="row">
+                        <div class="col-12 mb-2">
+                            <p>In this project, I worked on predicting passenger survival from the Titanic disaster using data provided in a Kaggle challenge. The aim was to build a model that could predict which types of passengers were more likely to survive based on features like age, gender, and socio-economic class.</p>
+                            <p>Below is an outline of the steps I followed to complete the project:</p>
+                        </div>
+
+                        <div class="col-12 mb-2">
+                            <h3>1. Exploratory Data Analysis (EDA)</h3>
+                            <p>The first step involved performing EDA to understand the dataset and identify key trends. I performed the following operations:</p>
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Data Cleaning</strong>: Handled missing values, particularly in the <em>Age</em> and <em>Cabin</em> columns, by either imputing median values or dropping uninformative features.</li>
+                                <li class="list-group-item"><strong>Feature Exploration</strong>: Analyzed the distribution of key variables like <em>Sex</em>, <em>Age</em>, <em>Fare</em>, and <em>Pclass</em> to see how they correlated with survival rates.</li>
+                                <li class="list-group-item"><strong>Outlier Detection</strong>: Used visual techniques like boxplots to identify and remove any outliers in continuous variables like <em>Fare</em>.</li>
+                                <li class="list-group-item"><strong>Visualization</strong>: Created visualizations using libraries like <em>matplotlib</em> and <em>seaborn</em> to better understand the relationships between variables. For example, I plotted survival rates against gender, passenger class, and embarked location to reveal insights.</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-12 mb-2">
+                            <h3>2. Feature Engineering</h3>
+                            <p>After EDA, I engineered new features to improve model performance:</p>
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Title Extraction</strong>: Extracted titles (e.g., Mr., Mrs., Miss) from passenger names to capture information about social status and gender.</li>
+                                <li class="list-group-item"><strong>Family Size</strong>: Created a new feature to represent the family size of each passenger by combining <em>SibSp</em> and <em>Parch</em> (siblings/spouse and parents/children).</li>
+                                <li class="list-group-item"><strong>Fare Binning</strong>: Grouped fare into categories to handle variability and make it easier for the model to interpret.</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-12 mb-2">
+                            <h3>3. Data Preprocessing</h3>
+                            <p>To prepare the data for machine learning, I performed several preprocessing steps:</p>
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Label Encoding</strong>: Converted categorical variables such as <em>Sex</em> and <em>Embarked</em> into numerical labels.</li>
+                                <li class="list-group-item"><strong>Standardization</strong>: Scaled continuous features like <em>Age</em> and <em>Fare</em> to ensure they were on a similar scale using <em>StandardScaler</em>.</li>
+                                <li class="list-group-item"><strong>Splitting the Data</strong>: Split the data into training and testing sets to evaluate the model's performance effectively.</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-12 mb-2">
+                            <h3>4. Model Building</h3>
+                            <p>I tried different machine learning models to find the best one:</p>
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Logistic Regression</strong>: As a starting point, I implemented logistic regression to classify passengers as survivors or non-survivors. This simple model provided a baseline accuracy.</li>
+                                <li class="list-group-item"><strong>Random Forest</strong>: Next, I used a Random Forest classifier to improve performance by capturing non-linear relationships and handling missing data more effectively.</li>
+                                <li class="list-group-item"><strong>Support Vector Machines (SVM)</strong>: I also experimented with SVM to see if it could capture more complex decision boundaries.</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-12 mb-2">
+                            <h3>5. Hyperparameter Tuning</h3>
+                            <p>To optimize the model performance, I performed hyperparameter tuning:</p>
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>GridSearchCV</strong>: I used <em>GridSearchCV</em> to fine-tune hyperparameters for the Random Forest model, such as the number of trees, maximum depth, and minimum samples per leaf. This step improved the model's accuracy.</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-12 mb-2">
+                            <h3>6. Statistical Testing and Validation</h3>
+                            <p>I validated the performance of my models using:</p>
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Cross-validation</strong>: Employed K-fold cross-validation to ensure that the model generalized well across different subsets of data.</li>
+                                <li class="list-group-item"><strong>Confusion Matrix &amp; ROC Curve</strong>: Evaluated the model using confusion matrices and ROC curves to measure precision, recall, and overall classification performance.</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-12 mb-2">
+                            <h3>7. Data Visualization</h3>
+                            <p>I used visualizations to present my findings and model results:</p>
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Feature Importance Plot</strong>: Displayed which features were most influential in predicting survival using the Random Forest model.</li>
+                                <li class="list-group-item"><strong>Survival Distribution Plots</strong>: Plotted survival distributions across different classes and genders to visually convey the insights derived from the data.</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-12 mb-2">
+                            <h3>8. Model Submission</h3>
+                            <p>Finally, I generated predictions on the test dataset and submitted them to the Kaggle leaderboard. The final model achieved an accuracy of <strong>0.77033</strong>, which placed me in a respectable position on the leaderboard.</p>
+                        </div>
+
+                        <div class="col-12 mb-2">
+                            <h3>Key Takeaways</h3>
+                            <p>This project helped me gain a solid foundation in data analysis, machine learning, and working with real-world datasets. I learned how to systematically approach a problem, starting with data exploration and progressing through model building, tuning, and evaluation. Additionally, I improved my skills in using libraries like <em>pandas</em>, <em>numpy</em>, <em>scikit-learn</em>, and <em>seaborn</em> to solve data science problems.</p>
+                        </div>
+                    </div>
+
+
+
+                  </div>
+                </div>
+
+
+                
+              
+              </div>
+            
+            </div>
+          
+        
+        </div>
+      </div>
+      
+      
+      
+      <script src="plugins/jquery/jquery.min.js"></script>
+      <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="plugins/simplebar/simplebar.min.js"></script>
+      <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
+      
+      
+      <script src="plugins/DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
+      
+      
+      <script src="plugins/apexcharts/apexcharts.js"></script>
+      
+      
+      <script src="js/mono.js"></script>
+      <script src="js/chart.js"></script>
+      <script src="js/map.js"></script>
+      <script src="js/custom.js"></script>
+      <script src="js/sidebar_menu.js"></script>
+
+
+      
+    </body>
+  </html>
