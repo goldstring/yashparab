@@ -25,7 +25,7 @@ function displayCards(page) {
   paginatedItems.forEach(item => {
     cardContainer.innerHTML += `
           <div class="col-12 col-md-3 mb-4">
-            <div class="card shadow-lg zoom h-100">
+            <div class="card shadow-lg h-100">
               <img src="${item.image}" class="card-img-top border" alt="${item.title}">
               <div class="card-body text-center">
                 <h5 class="card-title">${item.title}</h5>
