@@ -39,12 +39,12 @@
   cursor: pointer;
   transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
-/* .card-title {
-  max-height: 3em;           
-  overflow: hidden;         
-  white-space: nowrap;      
-  text-overflow: ellipsis;   
-} */
+.card-title {
+  max-height: 3em;           /* Restrict title height */
+  overflow: hidden;          /* Hide overflow */
+  white-space: nowrap;       /* Prevent text from wrapping */
+  text-overflow: ellipsis;   /* Add ellipsis for overflow text */
+}
 .card img {
     height: 180px;
     object-fit: contain;
@@ -65,9 +65,15 @@
 {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 5px;
 }
 .tech_stack_section span{
   margin: 5px;
+}
+.card-title
+{
+    font-weight: 600;
 }
     </style>
 
@@ -149,7 +155,7 @@
                 
 
                 <div class="row mb-3">
-                    <div class="card w-100 h1 text-uppercase p-3 text-center text-danger bolder shadow">Web Projects</div>                    
+                    <div class="card w-100 h1 text-uppercase p-3 text-center text-danger bolder shadow">Freelance Projects</div>                    
                 </div>
                
                 <div class="row d-flex flex-wrap" id="card-container">
@@ -192,7 +198,7 @@
       <script src="js/custom.js"></script>
       <script src="js/sidebar_menu.js"></script>
 
-      <script src="projects/web_projects.js"></script>
+      <script src="projects/freelance_projects.js"></script>
        
     </body>
   </html>

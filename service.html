@@ -39,35 +39,11 @@
   cursor: pointer;
   transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
-/* .card-title {
-  max-height: 3em;           
-  overflow: hidden;         
-  white-space: nowrap;      
-  text-overflow: ellipsis;   
-} */
-.card img {
-    height: 180px;
-    object-fit: contain;
-}
-.card {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
-.card-body
-{
-  padding:1rem;
-  flex-grow: 1; /* Makes all card bodies stretch to the same height */
-    display: flex;
-    flex-direction: column
-} 
-.tech_stack_section
-{
-  display: flex;
-  flex-wrap: wrap;
-}
-.tech_stack_section span{
-  margin: 5px;
+.card-title {
+  max-height: 3em;           /* Restrict title height */
+  overflow: hidden;          /* Hide overflow */
+  white-space: nowrap;       /* Prevent text from wrapping */
+  text-overflow: ellipsis;   /* Add ellipsis for overflow text */
 }
     </style>
 
@@ -144,25 +120,13 @@
             ——— CONTENT WRAPPER
             ===================================== -->
             <div class="content-wrapper">
-              <div class="content">
-
+              <div class="content card h-100">
+                
                 
 
-                <div class="row mb-3">
-                    <div class="card w-100 h1 text-uppercase p-3 text-center text-danger bolder shadow">Web Projects</div>                    
-                </div>
+                
                
-                <div class="row d-flex flex-wrap" id="card-container">
-                </div>
-                <div class="row d-flex justify-content-center mb-4">
-                  
-                  <nav>
-                    <ul id="pagination" class="pagination justify-content-center mt-4"></ul>
-                  </nav>
-                      
-              
-
-                </div>
+                
               
               </div>
             
@@ -192,7 +156,6 @@
       <script src="js/custom.js"></script>
       <script src="js/sidebar_menu.js"></script>
 
-      <script src="projects/web_projects.js"></script>
        
     </body>
   </html>

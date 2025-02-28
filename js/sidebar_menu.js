@@ -42,6 +42,13 @@ const menuData = [
         "is_nested": false
     },
     {
+        "label": "Freelance Projects",
+        "icon": "mdi mdi-folder-outline",
+        "title": "Freelance Projects",
+        "link": "freelance_projects.html",
+        "is_nested": false
+    },
+    {
         "label": "Projects",
         "icon": "mdi mdi-folder-outline",
         "title": "Projects",
@@ -51,15 +58,15 @@ const menuData = [
         "root_node": true,
         "subMenu": [
             {
-                "label": "Python",
-                "title": "Python",
-                "link": "python.html",
-                "is_nested": false,
-            },
-            {
                 "label": "Web Projects",
                 "title": "Web Projects",
                 "link": "web_projects.html",
+                "is_nested": false,
+            },
+            {
+                "label": "Python",
+                "title": "Python",
+                "link": "python.html",
                 "is_nested": false,
             },
             {
