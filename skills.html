@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Yash Parab Portfolio</title>
+        <link href="images/favicon.png" rel="shortcut icon" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            .skill_row .card
+            {
+                background-color: transparent!important;
+            }
+        </style>
+        
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="nav-fixed">
+        <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-dark" id="sidenavAccordion">
+            <!-- Sidenav Toggle Button-->
+            <button class="btn btn-icon text-white order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+            <!-- Navbar Brand-->
+            <!-- * * Tip * * You can use text or an image for your navbar brand.-->
+            <!-- * * * * * * When using an image, we recommend the SVG format.-->
+            <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
+            <a class="navbar-brand pe-3 ps-4 ps-lg-2 text-white" href="index.html">Portfolio</a>
+            <!-- Navbar Search Input-->
+            <!-- * * Note: * * Visible only on and above the lg breakpoint-->
+            
+            <!-- Navbar Items-->
+            <ul class="navbar-nav align-items-center ms-auto">
+                <!-- Documentation Dropdown-->
+                <li class="nav-item dropdown no-caret d-none d-md-block me-3">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownDocs" href="resume/resume.pdf" role="button" >
+                    <div class="fw-500 text-white" style="margin-right: 6px;">Download Resume</div>
+                    <i class="fa-solid fa-download text-white"></i>
+                  </a>
+                    
+                </li>
+                <!-- Navbar Search Dropdown-->
+                <!-- * * Note: * * Visible only below the lg breakpoint-->
+            
+                <!-- Alerts Dropdown-->
+                <li class="nav-item dropdown no-caret d-none d-sm-block me-3 dropdown-notifications">
+                    <a class="btn btn-icon btn-white" id="navbarDropdownAlerts" href="tel:8369655762" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa-solid fa-phone text-dark"></i>
+                    </a>
+                  
+                </li>
+                <!-- Messages Dropdown-->
+                <li class="nav-item d-none d-sm-block me-3 dropdown-notifications">
+                    <a class="btn btn-icon btn-white" id="navbarDropdownMessages" href="mailto:yashp7962@gmail.com" role="button"  aria-haspopup="true" aria-expanded="false">
+                        <i class="fa-solid fa-envelope text-dark"></i>
+                    </a>
+                    
+                </li>
+                <!-- User Dropdown-->
+                <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
+                    <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="img-fluid" src="images/profile_image.jpg">
+                    </a>
+                    
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sidenav shadow-right sidenav-light bg-dark text-white">
+                    <div class="sidenav-menu" id="menuBar">
+                        <div class="nav accordion" id="accordionSidenav">
+                            
+                        </div>
+                    </div>
+                    <!-- Sidenav Footer-->
+                    <div class="sidenav-footer">
+                        
+                      <a href="resume/resume.pdf" class="btn btn-secondary w-100" type="button"><span style="padding-right: 6px;">Download Resume</span> <i class="fa-solid fa-download"></i></a>
+                        
+                    </div>
+                </nav>
+            </div>
+            <div class="pt-4" id="layoutSidenav_content">
+                <main>
+                   
+                    <!-- Main page content-->
+                    <div class="container-fluid p-4">
+                        <div class="row mt-2">
+                            <div class="card card-default card-profile py-5 mb-4 bg-gradient-primary-to-secondary d-flex justify-content-center w-100">
+                              <div class="card-header-bg" style="background-image:url(assets/img/user/user-bg-01.jpg)"></div>
+                              <div class="card-body card-profile-body">
+                                <div class="profile-avata">
+                                  <img class="rounded-circle" width="100%" src="images/profile_image.jpg" alt="Avata Image">
+                                  <span class="h3 d-block mt-3 mb-2 text-white">Yash Parab</span>
+                                  <span class="d-block text-white">yashp7962@gmail.com</span>
+                                </div>
+                               
+                              </div>
+                              <div class="card-footer card-profile-footer bg-light" style="border-radius: 10px;background-color:#FFD700!important;">
+                                <ul class="nav nav-pills justify-content-center">
+                                  <li class="nav-item">
+                                    <a class="nav-link" id="pills-home-tab" href="index.html" role="tab" aria-controls="nav-tabs" aria-selected="false">Profile</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" id="pills-home-tab" href="education.html" role="tab" aria-controls="nav-tabs" aria-selected="false">Educations</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" id="pills-home-tab" href="skills.html" role="tab" aria-controls="nav-tabs" aria-selected="false">Skills</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" id="pills-home-tab" href="experience.html" role="tab" aria-controls="nav-tabs" aria-selected="false">Experience</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" id="pills-home-tab" href="certificates.html" role="tab" aria-controls="nav-tabs" aria-selected="false">Certificates</a>
+                                  </li>
+                                 
+                                  <li class="nav-item">
+                                    <a class="nav-link" id="pills-home-tab" href="service.html" role="tab" aria-controls="nav-tabs" aria-selected="false">Services</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+          
+                        </div>
+
+                        <div class="row">
+
+                            <div class="card card-default card-profile justify-content-center w-100">
+          
+                                
+                                <div class="border-1 w-100 mb-2 p-2">
+                                    <h2 class="card-title text-uppercase text-danger text-center mt-3 mb-4"><strong>FrontEnd Developement</strong></h2>
+                                    <div class="row d-flex">
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/frontend/html.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">HTML5</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/frontend/html.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">css</h5>
+                                      </div>
+          
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/frontend/javascript.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Javascript</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/frontend/ajax.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Ajax</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/frontend/reactjs.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">ReactJs</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/frontend/jquery.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Jquery</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 m-2">
+                                        <img src="images/skills/frontend/bootstrap.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Bootstrap</h5>
+                                      </div>
+          
+                                      
+          
+                                    </div>
+                                </div>
+          
+          
+                                <div class="border-1 w-100 mb-2 p-2">
+                                    <h2 class="card-title text-uppercase text-danger text-center mt-3 mb-4"><strong>BackEnd Developement</strong></h2>
+                                    <div class="row d-flex">
+          
+                                      <div class="col-6 col-md-2 border-0">
+                                        <img src="images/skills/backend/php.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">PHP</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0">
+                                        <img src="images/skills/backend/python.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Python</h5>
+                                      </div>
+          
+          
+                            
+          
+                                      <div class="col-6 col-md-2 border-0">
+                                        <img src="images/skills/backend/django.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Django</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0">
+                                        <img src="images/skills/backend/flask.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Flask</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0">
+                                        <img src="images/skills/backend/codeigniter.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Codeigniter</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0">
+                                        <img src="images/skills/backend/laravel.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Laravel</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0">
+                                        <img src="images/skills/backend/api.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Rest API</h5>
+                                      </div>
+          
+                                      
+          
+                                    </div>
+                                </div>
+          
+                                <div class="w-100 mb-5">
+                                    <h2 class="card-title text-uppercase text-danger text-center mt-3 mb-4"><strong>Database</strong></h2>
+                                    <div class="row d-flex justify-content-between">
+          
+                                      <div class="col-6 col-md-2 border-0">
+                                        <img src="images/skills/db/mysql.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Mysql</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0">
+                                        <img src="images/skills/db/mongodb.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">MongoDB</h5>
+                                      </div>
+          
+          
+                                      <div class="col-6 col-md-2 border-0">
+                                        <img src="images/skills/db/sqllite.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">SqlLite</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0">
+                                        <img src="images/skills/db/sql.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Microsoft Sql Server</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0">
+                                        <img src="images/skills/db/postgres.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Postgres</h5>
+                                      </div>
+          
+                                      
+                                      
+          
+                                    </div>
+                                </div>
+          
+          
+                                <div class="w-100 mb-2">
+                                    <h2 class="card-title text-uppercase text-danger text-center mt-3 mb-4"><strong>Data Science</strong></h2>
+                                    <div class="row d-flex">
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/machine_learning.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Machine Learning</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/deep_learning.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Deep Learning</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/computer_vision.png" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Computer Vision</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/nlp.png" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">NLP</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/time_series.png" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Time Series</h5>
+                                      </div>
+                                      
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/powerbi.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Powerbi</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/excel.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Excel</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/docker.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Docker</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/aws.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">AWS</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/maths.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Mathematics &amp; Stastics</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/git.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Git &amp; Github</h5>
+                                      </div>
+          
+          
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/opencv.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Open CV</h5>
+                                      </div>
+          
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/tensorflow.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Tensorflow</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/pytorch.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Pytorch</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/scikit.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Scikit-Learn</h5>
+                                      </div>
+          
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/numpy.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Numpy</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/pandas.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Pandas</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/matplotlib.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Matplotlib</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/keras.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">Keras</h5>
+                                      </div>
+          
+                                      <div class="col-6 col-md-2 border-0 mb-2">
+                                        <img src="images/skills/datascience/ab_testing.svg" class="card-img-top">
+                                        <h5 class="card-title text-center pt-2">AB Testing</h5>
+                                      </div>
+          
+                                 
+                                      
+          
+                                    </div>
+                                    
+                                  
+                                </div>
+          
+                                
+                              
+                                 
+                                
+                               
+                              
+                              
+                              
+                            </div>
+                        </div>
+
+                      
+                        
+                    </div>
+                </main>
+                
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script src="js/scripts.js"></script>
+        <script src="js/sidebar_menu.js"></script>
+
+
+
+</body>
+</html>
