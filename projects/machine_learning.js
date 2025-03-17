@@ -5,6 +5,7 @@ const data = [
   { problem: 'Regression', image: 'images/projects/medical_insurance_cost_prediction/wallpaper.png', link: 'https://github.com/goldstring/Medical-Insurance-Cost-Prediction-Using-Machine-Learning-Regression', title: 'Medical Insurance Cost Prediction' },
   { problem: 'Regression', image: 'images/projects/rainfall_prediction/wallpaper.png', link: 'https://github.com/goldstring/Rainfall-Prediction-Using-Machine-Learning-Regression', title: 'Rainfall Prediction' },
   { problem: 'Clustering', image: 'images/projects/mall_customer_segmentation/wallpaper.png', link: 'https://github.com/goldstring/Mall-Customer-Segmentation-Using-Machine-Learning-Clustering', title: 'Mall Customer Segmentation Using K Means Clustering' },
+  { problem: 'Regression', image: 'images/projects/Sales-Prediction-Based-on-Advertising-Spend-using-machine_learning.jpg', link: 'https://github.com/goldstring/Sales-Prediction-Based-on-Advertising-Spend-using-machine_learning', title: 'Predicting Sales Revenue from Advertising Spend' },
 
 
 ];
