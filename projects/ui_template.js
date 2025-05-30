@@ -1,7 +1,7 @@
 const data = [
-    { image: 'images/projects/malvani_tales/logo.jpg', link: 'https://github.com/goldstring/malvanitales', title: 'Malvani Tales Restaurant Portfolio' },
-    { image: 'images/projects/tic_tac_toe_using_reactjs/output.png', link: 'https://github.com/goldstring/tictactoe_using_reactjs', title: 'Tic Tac Toe Using React Js' },
-    { image: 'images/projects/nexa_agency_website_template/banner.png', link: 'https://github.com/goldstring/Nexa-Agency-Website-Template', title: 'Nexa Agency Website Template' },
+    { is_official: true, image: 'images/projects/malvani_tales/logo.jpg', link: 'https://github.com/goldstring/malvanitales', title: 'Malvani Tales Restaurant Portfolio' },
+    { is_official: false, image: 'images/projects/tic_tac_toe_using_reactjs/output.png', link: 'https://github.com/goldstring/tictactoe_using_reactjs', title: 'Tic Tac Toe Using React Js' },
+    { is_official: false, image: 'images/projects/nexa_agency_website_template/banner.png', link: 'https://github.com/goldstring/Nexa-Agency-Website-Template', title: 'Nexa Agency Website Template' },
 
 ];
 
@@ -19,19 +19,28 @@ function displayCards(page) {
     const paginatedItems = data.slice(start, end);
 
     paginatedItems.forEach(item => {
+
         cardContainer.innerHTML += `
-          <div class="col-12 col-md-3 mb-4">
-              <div class="card shadow-lg" style="border-radius:10px;">
-                  <img src="${item.image}" class="card-img-top border" alt="${item.title}">
-                <div class="card-body text-center bg-light">
-                  
-                    <h5 class="card-title">${item.title}</h5>
+          <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="card shadow-lg projectCard">
+                ${item.is_official ? `<div class='ribbon red'><span>Official</span></div>` : `<div class='ribbon blue'><span>Unofficial </span></div>`}
+                <div class="card-header cardHeader">
+                    <img class="card-img-top" src="${item.image}">
                 </div>
-                <div class="card-footer text-center bg-light" style="border-top:1px solid #ccc;">
-                  <a target="_blank" href="${item.link}" class="btn btn-primary btn-sm ">Read More</a>
+                
+                <div class="card-body">
+                        <h5 class="card-title text-center">${item.title}</h5>
+                    
                 </div>
-              </div>
-            </div>
+                <div class="card-footer">
+                    <a target="_blank" href="${item.link}" class="btn btn-primary btn-sm w-100">Click To Read More</a>
+                </div>
+                
+            
+            </div>  
+
+
+           </div>
         `;
     });
 

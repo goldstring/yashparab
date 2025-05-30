@@ -1,6 +1,6 @@
 const data = [
-  { image: 'images/projects/django_todo_app/todo_app_using_django_wallpaper.png', link: 'https://github.com/goldstring/TodoApp-Using-Django-Python-', title: 'Django Todo App' },
-  { image: 'images/projects/bmi_calculator_stramlit/project_wallpaper.png', link: 'https://github.com/goldstring/BMI-CALCULATOR-USING-STREAMLIT-Python', title: 'BMI Calculator Using StreamLit' },
+  { is_official: false, image: 'images/projects/django_todo_app/todo_app_using_django_wallpaper.png', link: 'https://github.com/goldstring/TodoApp-Using-Django-Python-', title: 'Django Todo App' },
+  { is_official: false, image: 'images/projects/bmi_calculator_stramlit/project_wallpaper.png', link: 'https://github.com/goldstring/BMI-CALCULATOR-USING-STREAMLIT-Python', title: 'BMI Calculator Using StreamLit' },
 
 ];
 
@@ -19,19 +19,27 @@ function displayCards(page) {
 
   paginatedItems.forEach(item => {
     cardContainer.innerHTML += `
-        <div class="col-12 col-md-3 mb-4">
-            <div class="card shadow-lg" style="border-radius:10px;">
-                <img src="${item.image}" class="card-img-top border" alt="${item.title}">
-              <div class="card-body text-center bg-light">
+          <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="card shadow-lg projectCard">
+                ${item.is_official ? `<div class='ribbon red'><span>Official</span></div>` : `<div class='ribbon blue'><span>Unofficial </span></div>`}
+                <div class="card-header cardHeader">
+                    <img class="card-img-top" src="${item.image}">
+                </div>
                 
-                  <h5 class="card-title">${item.title}</h5>
-              </div>
-              <div class="card-footer text-center bg-light" style="border-top:1px solid #ccc;">
-                <a target="_blank" href="${item.link}" class="btn btn-primary btn-sm ">Read More</a>
-              </div>
-            </div>
-          </div>
-      `;
+                <div class="card-body">
+                        <h5 class="card-title text-center">${item.title}</h5>
+                    
+                </div>
+                <div class="card-footer">
+                    <a target="_blank" href="${item.link}" class="btn btn-primary btn-sm w-100">Click To Read More</a>
+                </div>
+                
+            
+            </div>  
+
+
+           </div>
+        `;
   });
 
   setupPagination();

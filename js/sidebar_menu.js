@@ -1,5 +1,12 @@
 const menuData = [
     {
+        "label": "Download Resume",
+        "icon": '<i class="fa-solid fa-download text-white"></i>',
+        "title": "Download Resume",
+        "link": "resume/resume.pdf",
+        "is_nested": false
+    },
+    {
         "label": "Home",
         "icon": '<i class="fa-solid fa-house"></i>',
         "title": "Home",
