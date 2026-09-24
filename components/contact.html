@@ -1,0 +1,65 @@
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="section section-alt js-spy-section">
+  <div class="container">
+    <div class="section-head mx-auto text-center">
+      <div class="section-tag mx-auto">Contact</div>
+      <h2>Let's build something reliable</h2>
+      <p class="mx-auto">Have a role, project or question in mind? Send a note and I'll get back to you within 1–2 business days.</p>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <ul class="contact-info-list">
+          <li>
+            <span class="ci-icon"><i class="bi bi-geo-alt"></i></span>
+            <div><span class="ci-label">Location</span><span class="ci-value location_link">Seattle, WA — remote-friendly</span></div>
+          </li>
+          <li>
+            <span class="ci-icon"><i class="bi bi-envelope"></i></span>
+            <div><span class="ci-label">Email</span><span class="ci-value email_link">sara.mitchell@mlmail.com</span></div>
+          </li>
+          <li>
+            <span class="ci-icon"><i class="bi bi-telephone"></i></span>
+            <div><span class="ci-label">Phone</span><span class="ci-value contact_link">+1 (206) 555-0148</span></div>
+          </li>
+        </ul>
+        <div class="social-row">
+          <a href="#" class="btn-outline-navy btn linkedin_link" style="border-radius:50%;width:44px;height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;" aria-label="GitHub"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="btn-outline-navy btn github_link" style="border-radius:50%;width:44px;height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          <a href="#" class="btn-outline-navy btn kaggle_link" style="border-radius:50%;width:44px;height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;" aria-label="GitHub"><i class="bi bi-bar-chart-fill"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <form id="contactForm" class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label" for="cfName">Name</label>
+              <input type="text" class="form-control" id="cfName" required>
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="cfEmail">Email</label>
+              <input type="email" class="form-control" id="cfEmail" required>
+              <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="cfSubject">Subject</label>
+              <input type="text" class="form-control" id="cfSubject" required>
+              <div class="invalid-feedback">Please add a subject.</div>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="cfMessage">Message</label>
+              <textarea class="form-control" id="cfMessage" rows="5" required></textarea>
+              <div class="invalid-feedback">Please enter a message.</div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-accent">Send message</button>
+              <div id="formStatus" class="form-status d-none"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

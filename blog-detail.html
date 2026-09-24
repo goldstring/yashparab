@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why your feature store is the contract no one signed — Sara Mitchell</title>
+<meta name="description" content="Training/serving skew rarely comes from the model. It comes from two teams computing the same feature two different ways.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<!-- ============ ARTICLE HERO ============ -->
+<section class="blog-detail-hero">
+  <div class="container">
+    <nav class="breadcrumb-custom">
+      <a href="index.html#hero">Home</a><span class="sep">/</span>
+      <a href="blog.html">Blog</a><span class="sep">/</span>
+      <span>Why your feature store is the contract no one signed</span>
+    </nav>
+    <div class="detail-hero-badges">
+      <span><i class="bi bi-diagram-3 me-1"></i>MLOps</span>
+      <span>Feature Stores</span>
+    </div>
+    <h1>Why your feature store is the contract no one signed</h1>
+    <div class="bd-meta-row">
+      <span class="bd-author-chip"><img src="https://placehold.co/60x60/0f2943/ffffff?text=SM" alt="Sara Mitchell">Sara Mitchell</span>
+      <span><i class="bi bi-calendar3"></i>September 12, 2026</span>
+      <span><i class="bi bi-clock"></i>9 min read</span>
+    </div>
+    <div class="blog-cover">
+      <img class="lightbox-trigger" src="https://placehold.co/1200x600/e87532/ffffff?text=Feature+Store+Architecture" alt="Diagram of a streaming feature store architecture">
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARTICLE BODY ============ -->
+<section class="blog-body-section">
+  <div class="container">
+    <div class="row gy-5">
+
+      <div class="col-lg-8">
+        <div class="blog-content">
+          <p>Every postmortem I've run on a model that quietly got worse in production ends up in the same place. Not the architecture, not the hyperparameters, not even the data — the culprit is almost always a feature that means two slightly different things depending on who computed it last.</p>
+
+          <p>We spent two weeks on exactly this bug during the fraud-detection rebuild I've written about before, and it's worth explaining properly, because the fix wasn't a smarter model. It was treating the feature store schema as a contract with its own version history, not an implementation detail that lives inside someone's notebook.</p>
+
+          <h2 id="sec-symptom">The symptom looks like model decay</h2>
+          <p>The first sign we saw was a slow, steady drop in precision that didn't correlate with anything obvious — no data volume spike, no upstream outage, no schema migration announced in any channel we were watching. Retraining on fresh data helped for about a week, then the same decay crept back in.</p>
+          <p>That pattern is the tell. A genuinely stale model degrades and stays degraded until you retrain. A model quietly fighting a definitional mismatch between training and serving degrades, gets patched by a retrain that happens to average over the mismatch, and then drifts again as the two code paths diverge further.</p>
+
+          <h2 id="sec-cause">Two teams, one feature name, two definitions</h2>
+          <p>Our training pipeline computed <code>txn_velocity_24h</code> as a rolling count in Spark, windowed on event time with a two-minute allowed-lateness buffer for events that arrived out of order. The serving pipeline computed the same-named feature in a Flink job windowed on processing time, with no lateness handling at all, because nobody had ported that detail over when the streaming version was built six months later by a different team.</p>
+          <p>Both were reasonable engineering decisions in isolation. Neither team was wrong about their own system. The bug lived entirely in the gap between two definitions that shared a name and nothing else.</p>
+
+          <blockquote>
+            The schema is the interface. If two systems can write to a feature under the same name with different semantics, you don't have a feature store — you have two feature stores wearing a trench coat.
+          </blockquote>
+
+          <h3>What actually caught it</h3>
+          <p>We didn't catch this from a metrics dashboard. We caught it by writing a nightly job that replays a sample of production events through both the batch and streaming feature paths and diffs the output row by row. Anything outside a tight tolerance gets flagged before it ever reaches a training run.</p>
+          <ul>
+            <li>Sample 2,000 events per day across peak and off-peak windows.</li>
+            <li>Recompute every shared feature through both pipelines.</li>
+            <li>Fail the build if more than 0.5% of sampled rows disagree beyond tolerance.</li>
+          </ul>
+
+          <p>The check itself is a plain diff job — the value is in running it on every merge, not in anything clever about the code:</p>
+
+          <div class="code-block">
+            <div class="code-block-head">
+              <span class="code-lang"><span class="dot-row"><span></span><span></span><span></span></span>feature_skew_check.py</span>
+              <button class="copy-btn" type="button" data-target="codeSnippet1"><i class="bi bi-clipboard"></i> Copy</button>
+            </div>
+            <pre><code id="codeSnippet1">import pandas as pd
+
+def check_feature_skew(batch_df: pd.DataFrame,
+                        stream_df: pd.DataFrame,
+                        feature_cols: list[str],
+                        tolerance: float = 1e-3) -> pd.DataFrame:
+    """Diff shared features computed by two pipelines on the same events."""
+    merged = batch_df.merge(
+        stream_df, on="event_id", suffixes=("_batch", "_stream")
+    )
+
+    report_rows = []
+    for col in feature_cols:
+        diff = (merged[f"{col}_batch"] - merged[f"{col}_stream"]).abs()
+        mismatched = merged[diff > tolerance]
+        report_rows.append({
+            "feature": col,
+            "sampled": len(merged),
+            "mismatched": len(mismatched),
+            "mismatch_rate": len(mismatched) / max(len(merged), 1),
+        })
+
+    return pd.DataFrame(report_rows)
+
+
+if __name__ == "__main__":
+    report = check_feature_skew(load_batch_sample(), load_stream_sample(),
+                                 feature_cols=["txn_velocity_24h", "device_reputation"])
+    failing = report[report["mismatch_rate"] > 0.005]
+    if not failing.empty:
+        raise SystemExit(f"Feature skew detected:\n{failing.to_string(index=False)}")
+</code></pre>
+          </div>
+
+          <h2 id="sec-fix">Treating the schema like an API contract</h2>
+          <p>The long-term fix had three parts, and none of them involved touching the model:</p>
+          <ol>
+            <li><strong>Version every feature definition.</strong> <code>txn_velocity_24h_v2</code> exists specifically because its windowing semantics changed — the old name is retired, not silently redefined.</li>
+            <li><strong>One computation path, two execution engines.</strong> We moved the windowing logic into a shared spec that both Spark and Flink jobs compile against, instead of two teams hand-writing the same logic twice.</li>
+            <li><strong>Make skew a release blocker.</strong> The replay-and-diff job above now runs in CI for any change touching feature logic, not just nightly in production.</li>
+          </ol>
+
+          <h2 id="sec-results">What changed</h2>
+          <p>Precision stopped its slow bleed within the first release cycle after the shared spec went in, and — more usefully — we caught two more would-be skew bugs in CI before they ever reached production, in features that had nothing to do with the original incident.</p>
+          <figure>
+            <img class="lightbox-trigger" src="https://placehold.co/1000x500/0f2943/ffffff?text=Precision+Before+%2F+After" alt="Chart showing precision stabilizing after the fix">
+            <figcaption>Precision on the holdout set before and after the shared feature spec shipped. Click to enlarge.</figcaption>
+          </figure>
+
+          <p>If the training-vs-serving skew problem is new to you, this walkthrough of the underlying model mechanics is a good primer before you go digging into your own pipeline:</p>
+          <div class="video-embed">
+            <iframe src="https://www.youtube.com/embed/aircAruvnKk" title="But what is a neural network? — 3Blue1Brown" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <p class="video-embed-caption"><i class="bi bi-youtube"></i>But what is a neural network? — 3Blue1Brown</p>
+
+          <figure>
+            <img class="lightbox-trigger" src="https://placehold.co/1000x560/e87532/ffffff?text=Shared+Feature+Spec" alt="Diagram of the shared feature spec compiling to both Spark and Flink">
+            <figcaption>The shared spec compiles down to both the Spark batch job and the Flink streaming job — one definition, two runtimes.</figcaption>
+          </figure>
+
+          <h2 id="sec-takeaway">The takeaway</h2>
+          <p>If your training and serving features are computed by different code, in different languages, owned by different teams, assume they will drift — not because anyone is careless, but because that's what happens to any contract nobody is enforcing. Put a test on the boundary before you put more capacity into the model.</p>
+
+          <div class="blog-tag-row">
+            <span class="tag-pill">#mlops</span>
+            <span class="tag-pill">#feature-stores</span>
+            <span class="tag-pill">#production-ml</span>
+            <span class="tag-pill">#data-quality</span>
+          </div>
+
+          <div class="blog-share-row">
+            <span>Share this post</span>
+            <a href="#" aria-label="Share on X"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="Share on LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="Copy link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+
+          <div class="author-card">
+            <img src="https://placehold.co/120x120/0f2943/ffffff?text=SM" alt="Sara Mitchell">
+            <div>
+              <h5>Sara Mitchell</h5>
+              <span class="author-role">Machine Learning Engineer</span>
+              <p>Sara writes about the unglamorous parts of shipping ML — data quality, reproducibility, and systems that fail gracefully. Based in Seattle, WA.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="blog-sidebar">
+
+          <div class="sidebar-widget">
+            <h5><i class="bi bi-list-ul"></i>On this page</h5>
+            <ul class="toc-list">
+              <li><a href="#sec-symptom">The symptom looks like model decay</a></li>
+              <li><a href="#sec-cause">Two teams, one feature name</a></li>
+              <li><a href="#sec-fix">Treating the schema as a contract</a></li>
+              <li><a href="#sec-results">What changed</a></li>
+              <li><a href="#sec-takeaway">The takeaway</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<div id="contact_content"></div>
+<div id="footer_content"></div>
+
+<button id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="common.js"></script>
+</body>
+</html>

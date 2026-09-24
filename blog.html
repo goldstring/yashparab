@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Sara Mitchell</title>
+<meta name="description" content="Notes on computer vision, NLP and MLOps from Sara Mitchell, a Machine Learning Engineer.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/listing.css">
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<!-- ============ PAGE HEADER (text is filled by listing.js from the page config) ============ -->
+<section class="page-header">
+  <div class="container">
+    <nav class="breadcrumb-custom" aria-label="Breadcrumb">
+      <a href="index.html#hero">Home</a><span class="sep">/</span>
+      <span data-list="crumb"></span>
+    </nav>
+    <div class="section-tag" data-list="tag"></div>
+    <h1 data-list="title"></h1>
+    <p class="lead-muted" data-list="lead"></p>
+  </div>
+</section>
+
+<!-- ============ LIST (generic: same markup for blog and projects) ============ -->
+<section class="section">
+  <div class="container">
+
+    <div class="list-toolbar">
+      <!-- Search -->
+      <div class="list-search" id="listSearch">
+        <label for="listSearchInput" class="visually-hidden" data-list="searchLabel">Search</label>
+        <i class="bi bi-search list-search-icon" aria-hidden="true"></i>
+        <input type="text" id="listSearchInput" placeholder="Search (3+ characters)"
+               autocomplete="off" spellcheck="false"
+               role="combobox" aria-autocomplete="list" aria-expanded="false"
+               aria-controls="listSearchList" aria-describedby="listSearchHint">
+        <button type="button" class="list-search-clear" id="listSearchClear" aria-label="Clear search"><i class="bi bi-x-lg"></i></button>
+        <ul class="list-search-results" id="listSearchList" role="listbox" aria-label="Search results" hidden></ul>
+        <p class="visually-hidden" id="listSearchHint">Type at least 3 characters. Use the up and down arrow keys to move through results and Enter to open one.</p>
+        <div class="visually-hidden" id="listSearchStatus" role="status" aria-live="polite"></div>
+      </div>
+
+      <!-- Category chips (built from the data) -->
+      <div class="filter-group list-cats" id="listCats" role="group" aria-label="Filter by category"></div>
+
+      <!-- Sub-category chips (shown only when the page config sets subcategoryField) -->
+      <div class="list-subs" id="listSubs" style="display:none;">
+        <div class="filter-group sub" role="group" aria-label="Filter by subtopic"></div>
+      </div>
+    </div>
+
+    <p class="list-count" id="listCount" role="status" aria-live="polite"></p>
+
+    <!-- Cards are rendered here by the page's card() function -->
+    <div class="row g-4" id="listGrid"></div>
+
+    <div class="list-state" id="listState" role="status" hidden></div>
+
+    <div class="no-results" id="listEmpty">
+      <i class="bi bi-search mb-2 d-block" style="font-size:1.6rem;"></i>
+      <span id="listEmptyText"></span>
+    </div>
+
+    <nav class="pagination-custom" id="listPager" aria-label="Pagination" hidden></nav>
+
+    <!-- Call-to-action box (newsletter form or button, from the page config) -->
+    <div id="listCta"></div>
+
+  </div>
+</section>
+
+<div id="contact_content"></div>
+<div id="footer_content"></div>
+
+<button id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/data/blogs.js"></script>
+<script src="common.js"></script>
+
+</body>
+</html>

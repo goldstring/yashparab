@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "category": "MLOps",
+    "title": "Why your feature store is the contract no one signed",
+    "link": "blog-detail.html",
+    "image": "https://placehold.co/160x110/e87532/ffffff?text=Feature+Stores",
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "category": "MLOps",
+    "title": "A canary rollout checklist for model deployments",
+    "link": "blog-detail.html",
+    "image": "https://placehold.co/160x110/0f2943/ffffff?text=Canary",
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "category": "Computer Vision",
+    "title": "Label noise is the silent killer of segmentation models",
+    "link": "blog-detail.html",
+    "image": "https://placehold.co/160x110/e87532/ffffff?text=Labels",
+    "isActive": true
+  },
+  {
+    "id": 4,
+    "category": "NLP",
+    "title": "Fine-tuning vs. prompting for support ticket triage",
+    "link": "blog-detail.html",
+    "image": "https://placehold.co/160x110/0f2943/ffffff?text=Triage",
+    "isActive": true
+  },
+  {
+    "id": 5,
+    "category": "Career",
+    "title": "What I actually ask ML engineer candidates",
+    "link": "blog-detail.html",
+    "image": "https://placehold.co/160x110/e87532/ffffff?text=Interviews",
+    "isActive": true
+  },
+  {
+    "id": 6,
+    "category": "MLOps",
+    "title": "Alerting on drift without drowning the on-call rotation",
+    "link": "blog-detail.html",
+    "image": "https://placehold.co/160x110/0f2943/ffffff?text=Drift",
+    "isActive": true
+  },
+  {
+    "id": 7,
+    "category": "Computer Vision",
+    "title": "Getting a segmentation model under 15ms on-device",
+    "link": "blog-detail.html",
+    "image": "https://placehold.co/160x110/e87532/ffffff?text=Edge",
+    "isActive": true
+  },
+  {
+    "id": 8,
+    "category": "NLP",
+    "title": "Evaluating RAG systems beyond \"it looks right\"",
+    "link": "blog-detail.html",
+    "image": "https://placehold.co/160x110/0f2943/ffffff?text=RAG",
+    "isActive": true
+  },
+  {
+    "id": 9,
+    "category": "Career",
+    "title": "The one-on-one questions that actually unblock junior ML hires",
+    "link": "blog-detail.html",
+    "image": "https://placehold.co/160x110/e87532/ffffff?text=Mentoring",
+    "isActive": true
+  },
+  {
+    "id": 10,
+    "category": "MLOps",
+    "title": "Cutting our training bill in half without losing accuracy",
+    "link": "blog-detail.html",
+    "image": "https://placehold.co/160x110/0f2943/ffffff?text=Cost",
+    "isActive": true
+  },
+  {
+    "id": 11,
+    "category": "NLP",
+    "title": "Benchmarking vector databases for retrieval latency",
+    "link": "blog-detail.html",
+    "image": "https://placehold.co/160x110/e87532/ffffff?text=Vector+DB",
+    "isActive": false
+  },
+  {
+    "id": 12,
+    "category": "Computer Vision",
+    "title": "Notes on LoRA adapters for vision transformers",
+    "link": "blog-detail.html",
+    "image": "https://placehold.co/160x110/0f2943/ffffff?text=LoRA",
+    "isActive": false
+  }
+]
