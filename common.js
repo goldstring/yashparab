@@ -12,7 +12,7 @@ $(document).ready(function () {
 
     const resume_download_url = "https://goldstring.github.io/yashparab/resume/resume.pdf";
 
-    $("#navbar").load("../components/navbar.html", function () {
+    $("#navbar").load("../yashparab/components/navbar.html", function () {
         console.log('Navbar Loaded');
 
         $('.email_link1').attr('href', 'mailto:' + email);
@@ -22,7 +22,7 @@ $(document).ready(function () {
     });
 
 
-    $("#contact_content").load("../components/contact.html", function () {
+    $("#contact_content").load("../yashparab/components/contact.html", function () {
         console.log('Contact Loaded');
         $('#contactForm').on('submit', function(e) {
             e.preventDefault();
@@ -68,7 +68,7 @@ $(document).ready(function () {
     });
 
 
-    $("#footer_content").load("../components/footer.html", function () {
+    $("#footer_content").load("../yashparab/components/footer.html", function () {
         console.log('Footer Loaded');
         $('.email_link').html(email);
         $('.github_link').attr('href', github_url);
